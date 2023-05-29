@@ -1,0 +1,41 @@
+server:
+  port: 8031
+
+app:
+  groupId: '@project.groupId@'
+  name: '@project.artifactId@'
+  version: '@project.version@'
+
+
+# custom path for swagger-ui
+springdoc:
+  swagger-ui:
+    operationsSorter: alpha
+    tagsSorter: alpha
+    config-url: /v3/api-docs
+    url: /v3/api-docs
+
+spring:
+  datasource:
+    url: jdbc:firebirdsql://172.19.0.2:3050/desafio_db
+    username: SYSDBA
+    password: 123456
+    driver-class-name: org.firebirdsql.jdbc.FBDriver
+  jpa:
+    database-platform: org.hibernate.dialect.FirebirdDialect
+    hibernate:
+      ddl-auto: update
+      connection:
+        charSet: UTF-8
+        characterEncoding: UTF-8
+        useUnicode: true
+
+
+  #habilitando o banner.txt com cores
+  output:
+    ansi:
+      enabled: always
+  main:
+    banner-mode: console
+  banner:
+    location: classpath:banner.txt
