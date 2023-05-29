@@ -9,6 +9,7 @@ services:
       - ./db/firebird-banco:/var/lib
     ports:
       - 3050:3050
+      - 3051:3051
     environment:
       TZ: America/Sao_Paulo
       ISC_PASSWORD: 123456
@@ -19,23 +20,8 @@ services:
     networks:
       - development-network
 
-  ms-desafio:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: service-java
-    volumes:
-      - ./db/api-java:/var/lib
-    ports:
-      - 8031:8031
-    networks:
-      - development-network
-    depends_on:
-      - "firebird"
-
 volumes:
   firebird-banco:
-  api-java:
 
 networks:
   development-network:

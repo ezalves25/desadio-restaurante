@@ -17,7 +17,7 @@ springdoc:
 
 spring:
   datasource:
-    url: jdbc:firebirdsql://172.19.0.2:3050/desafio_db
+    url: jdbc:firebirdsql://localhost:3050/desafio_db
     username: SYSDBA
     password: 123456
     driver-class-name: org.firebirdsql.jdbc.FBDriver
